@@ -5,10 +5,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducer from './reducer.js';
 
-const Store = (preloadedState = {}) => (
+const Store = (
     createStore(
         reducer,
-        preloadedState,
         composeWithDevTools(applyMiddleware(thunk, logger))
     )
 );
